@@ -7,8 +7,19 @@ year <- c(1, 3, 4, 1, 2, 4, 5)
 cash <- data.frame(company, cash_flow, year)
 cash
 
+#cbind
+apple <- c(109.49, 109.90, 109.11, 109.95, 111.03)
+ibm <- c(159.82, 160.02, 159.84, 160.35, 164.79)
+cor_matrix <- cor(cbind(apple, ibm))
+
+# Create a list
+portfolio <- list(name, apple, ibm, cor_matrix)
+
 str(cash)
 summary(cash)
+attributes(cash)
+
+attach(cash)
 
 cash$year
 cash$cash_flow*2
@@ -29,7 +40,7 @@ tail (cash, n = 4)
 
 # column and row names
 colnames(cash) <- c("company", "cash_flow", "year")
-colnames(cash)
+rownames(cash) <- c("company", "cash_flow", "year")
 
 #subsets
 subset(cash, company == 'B')
