@@ -1,3 +1,7 @@
+#opening data
+data<-read.table("data.csv", header=TRUE, sep=",")
+attach(data)
+
 #variables
 company <- c("A", "A", "A", "B", "B", "B", "B")
 cash_flow <- c(1000, 4000, 550, 1500, 1100, 750, 6000)
